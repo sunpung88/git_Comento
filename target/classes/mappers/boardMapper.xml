@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.khs_user.springKHS1.mappers.board">
+
+<!-- 게시물 목록 -->
+<select id="list" resultType="kr.khs_user.springKHS1.domain.BoardVO">
+ select num, title, contents, writer, registered, views from khs_db.board
+</select>
+
+<!-- 게시물 작성 -->
+<insert id="write" parameterType="kr.khs_user.springKHS1.domain.BoardVO">
+ insert into
+  khs_db.board(title, contents, writer)
+   values(#{title}, #{contents}, #{writer})
+</insert>
+
+<!-- 게시물 조회 -->
+<select id="view" parameterType="int" resultType="kr.khs_user.springKHS1.domain.BoardVO">
+ select 
+  num, title, contents, writer, registered, views
+ from 
+  khs_db.board
+ where
+  num = #{num}   
+</select>
+
+<!-- 게시물 수정 -->
+<update id="modify" parameterType="kr.khs_user.springKHS1.domain.BoardVO" >
+ update khs_db.board
+  set
+   title = #{title},
+   contents = #{contents},
+   writer = #{writer}
+  where num = #{num}
+</update>
+
+</mapper>

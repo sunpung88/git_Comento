@@ -10,9 +10,14 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	코멘토 게시판 구현 
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  실행시간은 ${serverTime} 입니다. </P>
+
+<p>
+<a href="/board/list">게시물목록</a><br />
+<a href="/board/write">게시물 작성</a>
+</p>
 </body>
 </html>
