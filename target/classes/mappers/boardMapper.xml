@@ -6,14 +6,15 @@
 
 <!-- 게시물 목록 -->
 <select id="list" resultType="kr.khs_user.springKHS1.domain.BoardVO">
- select num, title, contents, writer, registered, views from khs_db.board
+  select num, title, contents, writer, registered, views from board
+  
 </select>
 
 <!-- 게시물 작성 -->
 <insert id="write" parameterType="kr.khs_user.springKHS1.domain.BoardVO">
  insert into
-  khs_db.board(title, contents, writer)
-   values(#{title}, #{contents}, #{writer})
+  board(num, title, contents, writer)
+   values(KHS_SEQ.nextval,#{title}, #{contents}, #{writer})
 </insert>
 
 <!-- 게시물 조회 -->
@@ -21,14 +22,14 @@
  select 
   num, title, contents, writer, registered, views
  from 
-  khs_db.board
+  board
  where
   num = #{num}   
 </select>
 
 <!-- 게시물 수정 -->
 <update id="modify" parameterType="kr.khs_user.springKHS1.domain.BoardVO" >
- update khs_db.board
+ update board
   set
    title = #{title},
    contents = #{contents},

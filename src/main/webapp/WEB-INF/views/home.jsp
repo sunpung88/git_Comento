@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>
-	코멘토 게시판 구현 
+	코멘토 게시판 구현(Oracle DB) 
 </h1>
 
 <P>  실행시간은 ${serverTime} 입니다. </P>

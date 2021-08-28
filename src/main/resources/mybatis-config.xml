@@ -3,6 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
   
-<configuration>
   
+<configuration>
+
+	<typeHandlers>
+        <typeHandler handler="kr.khs_user.springKHS1.handler.CLOBHandler" javaType="String" jdbcType="LONGVARCHAR"/>
+    </typeHandlers>
+    
 </configuration>
